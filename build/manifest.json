@@ -1,0 +1,33 @@
+
+  {
+    "name": "FIND LOCATION ",
+    "description": "Displays server LOCATION address on every website",
+    "author": "Rman",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "icons": {
+      "32": "favicon.png"
+    },
+    "permissions": [
+      "storage",
+      "tabs",
+      "webRequest",
+      "*://*/*",
+      "dns"
+    ],
+    "browser_action": {
+      "default_icon": {
+        "32": "favicon.png"
+      },
+      "browser_style": true,
+      "default_title": "Where are you from web server???",
+      "default_popup": "index.html"
+    }
+    
+}
+
+
+
+
+
+
