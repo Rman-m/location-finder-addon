@@ -28,6 +28,7 @@ function App() {
 			if (!response.ok)
 				throw new Error(`something went wrong error ${response.status} ❌`);
 			const jsonResponse = await response.json();
+			jsonResponse.yourLocation = (await getUrl() === "")? true : false;
 			setUrlData(jsonResponse);
 		} catch (err) {
 			setErrorMessage(err.message);
@@ -44,8 +45,9 @@ function App() {
 				<img src={loadingUrl} />
 			) : (
 				<>
-					<p> country: {urlData.country ?? errorMessage}</p>
-					<p> city: {urlData.city ?? errorMessage}</p>
+					<p>{urlData.yourLocation ? 'your' : ''} country: {urlData.country ?? errorMessage}</p>
+					<p>{urlData.yourLocation ? 'your' : ''} city: {urlData.city ?? errorMessage}</p>
+
 				</>
 			)}
 		</div>
