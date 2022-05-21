@@ -14,7 +14,6 @@ function App() {
 			currentWindow: true,
 			active: true,
 		});
-		console.log(urlTab);
 		const getUrlTab = new URL(await tabs[0].url).hostname;
 		
 		return getUrlTab
@@ -45,6 +44,7 @@ function App() {
 				<img src={loadingUrl} />
 			) : (
 				<>
+					{console.log(urlData)}
 					<p>{urlData.yourLocation ? 'your' : ''} country: {urlData.country ?? errorMessage}</p>
 					<p>{urlData.yourLocation ? 'your' : ''} city: {urlData.city ?? errorMessage}</p>
 
