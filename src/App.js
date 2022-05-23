@@ -20,7 +20,7 @@ function App() {
 		return getUrlTab
 	};
 
-	const w = useCallback(async () => {
+	const fetchApi = useCallback(async () => {
 
 		try {
 			setLoading(true);
@@ -47,7 +47,7 @@ function App() {
 				<>
 					{console.log(urlData)}
 					<p>{urlData.yourLocation ? 'your' : ''} country: {urlData.country ?? errorMessage}</p>
-					<p>{urlData.yourLocation ? 'your' : ''} city: {urlData.regionNames ?? errorMessage}</p>
+					<p>{urlData.yourLocation ? 'your' : ''} city: {urlData.regionName ?? errorMessage}</p>
 
 				</>
 			)}
