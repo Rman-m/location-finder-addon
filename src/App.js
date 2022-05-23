@@ -14,12 +14,13 @@ function App() {
 			currentWindow: true,
 			active: true,
 		});
+		console.log(tabs);
 		const getUrlTab = new URL(await tabs[0].url).hostname;
 		
 		return getUrlTab
 	};
 
-	const fetchApi = useCallback(async () => {
+	const w = useCallback(async () => {
 
 		try {
 			setLoading(true);
@@ -46,7 +47,7 @@ function App() {
 				<>
 					{console.log(urlData)}
 					<p>{urlData.yourLocation ? 'your' : ''} country: {urlData.country ?? errorMessage}</p>
-					<p>{urlData.yourLocation ? 'your' : ''} city: {urlData.city ?? errorMessage}</p>
+					<p>{urlData.yourLocation ? 'your' : ''} city: {urlData.regionNames ?? errorMessage}</p>
 
 				</>
 			)}
